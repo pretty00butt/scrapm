@@ -1,0 +1,26 @@
+{
+  "name": "scrapm",
+  "version": "0.1.0",
+  "description": "more convenient scraper for node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoony/scrapm.git"
+  },
+  "keywords": [
+    "scraper",
+    "scrapy",
+    "web",
+    "scraping",
+    "encoding"
+  ],
+  "author": "Hoony Jang <thechunsik@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hoony/scrapm/issues"
+  },
+  "homepage": "https://github.com/hoony/scrapm#readme"
+}
