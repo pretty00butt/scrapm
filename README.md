@@ -16,7 +16,7 @@ scrapm([options], callback);
 - **sourceEncoding** - default `''`, encoding of the webpage if `options.encoding` is `true`
 - **targetEncoding** - default `''`, encoding you want to get if `options.encoding` is `true`
 
-`callback` is called with `(err, $)`. You can manipulate DOM with `$` as you want. `$` is implemented with `[jsdom](https://github.com/tmpvar/jsdom)`.
+`callback` is called with `(err, $)`. You can manipulate DOM with `$` as you want. `$` is implemented with [jsdom](https://github.com/tmpvar/jsdom).
 
 ## Dependencies
 - **iconv**
