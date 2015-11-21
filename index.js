@@ -1,5 +1,6 @@
 var request = require('request');
 var Iconv = require('iconv').Iconv;
+var jsdom = require('jsdom');
 
 module.exports = function(opts, callback) {
   var callback = callback || false;
@@ -24,11 +25,19 @@ module.exports = function(opts, callback) {
     if (opts.encoding) {
       var iconv = new Iconv(opts.sourceEncoding, opts.targetEncoding + '//TRANSLIT//IGNORE');
       var bodyBuffer = new Buffer(html, 'binary');
-      var text = iconv.convert(bodyBuffer).toString();
-      callback(err, text);
+
+      html = iconv.convert(bodyBuffer).toString();
     }
 
-    callback(err, html);
+    jsdom.env({
+      scripts: ["http://code.jquery.com/jquery.js"],
+      html: html,
+      done: function (err, window) {
+        var $ = window.$;
+
+        callback(err, $);
+      }
+    });
   });
 }
 
